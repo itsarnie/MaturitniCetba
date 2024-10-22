@@ -176,7 +176,9 @@
         © 2024 <span>Matěj Ričl</span>, <span>Střední průmyslová škola a Vyšší odborná škola Kladno</span>
     </footer>
 
-    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.70/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.70/vfs_fonts.js"></script>
+    
     <script>
         const books = [
         { title: "Svatý Xaverius", author: "Arbes, J.", period: "19", genre: "próza", isCzech: true },
@@ -355,68 +357,62 @@
         }
 
         function generatePDF() {
-            const { jsPDF } = window.jspdf;
-            
-            // Vytvoření PDF s českými znaky
-            const doc = new jsPDF({
-                orientation: "portrait",
-                unit: "mm",
-                format: "a4"
-            });
-            
-            // Nastavení fontu s podporou českých znaků
-            doc.setFont("helvetica");
-            
-            // Nastavení nadpisu
-            doc.setFontSize(18);
-            doc.text("Seznam maturitní četby", 105, 20, { align: "center" });
-            
-            // Získání seznamu vybraných knih
-            const selectedBooksDiv = document.getElementById("selectedBooks");
-            const books = Array.from(selectedBooksDiv.children).map(book => {
-                const text = book.textContent;
-                // Rozdělení textu na název, autora a žánr (předpokládá určitý formát)
-                const parts = text.split('\n');
-                console.log(parts)
-                return {
-                    title: parts[0].trim(),
-                    author: parts[1].trim(),
-                    genre: parts[2].trim()
-                };
-            });
-            
-            // Přidání knih do PDF
-            doc.setFontSize(12);
-            let yPosition = 35;
-            
-            books.forEach((book, index) => {
-                // Kontrola, zda je potřeba nová stránka
-                if (yPosition > 270) {
-                    doc.addPage();
-                    yPosition = 20;
+            const docDefinition = {
+                pageSize: 'A4', // Zajištění, že se výstup vejde na stránku A4
+                pageMargins: [40, 60, 40, 60], // Okraje stránky
+                content: [
+                    { 
+                        text: 'Seznam maturitní četby', 
+                        style: 'header', 
+                        alignment: 'center' 
+                    },
+                    {
+                        ul: selectedBooks.map((book, index) => {
+                            return {
+                                columns: [
+                                    { text: `${index + 1}. ${book.title}`, width: '40%', bold: true },
+                                    { text: book.author, width: '30%', italics: true },
+                                    { text: book.genre, width: '30%', alignment: 'right', color: getGenreColor(book.genre) }
+                                ],
+                                margin: [0, 5, 0, 5]
+                            };
+                        })
+                    }
+                ],
+                styles: {
+                    header: {
+                        fontSize: 18,
+                        bold: true,
+                        margin: [0, 0, 0, 20]
+                    },
+                    subheader: {
+                        fontSize: 12,
+                        margin: [0, 10, 0, 5]
+                    }
+                },
+                footer: function(currentPage, pageCount) {
+                    return {
+                        text: `SPŠ a VOŠ Kladno - ${new Date().toLocaleDateString('cs-CZ')} (Strana ${currentPage} z ${pageCount})`,
+                        alignment: 'center',
+                        fontSize: 10,
+                        margin: [0, 0, 0, 20]
+                    };
                 }
-                
-                // Přidání čísla a názvu knihy
-                doc.setFont("helvetica", "bold");
-                console.log(book.title)
-                doc.text(`${index + 1}. ${book.title}`, 20, yPosition);
-                
-                // Přidání autora a žánru
-                doc.setFont("helvetica", "normal");
-                doc.text(`${book.author} - ${book.genre}`, 30, yPosition + 6);
-                
-                yPosition += 15;
-            });
-            
-            // Přidání patičky
-            const dateStr = new Date().toLocaleDateString('cs-CZ');
-            doc.setFontSize(10);
-            doc.text(`SPŠ a VOŠ Kladno - ${dateStr}`, 105, 285, { align: "center" });
-            
-            // Stažení PDF
-            doc.save('seznam-cetby.pdf');
+            };
+        
+            // Vygenerování a otevření PDF v novém okně
+            pdfMake.createPdf(docDefinition).download('seznam-cetby.pdf');
         }
-
+        
+        // Pomocná funkce pro přiřazení barvy podle žánru
+        function getGenreColor(genre) {
+            switch (genre) {
+                case 'próza': return '#007bff';
+                case 'poezie': return '#9c27b0';
+                case 'drama': return '#4caf50';
+                default: return '#000000';
+            }
+        }
         
         function validateSelection() {
             const results = [];
