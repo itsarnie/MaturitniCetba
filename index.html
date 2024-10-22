@@ -15,7 +15,8 @@
       </div>
 
       <div class="book-selection">
-        <div>
+        <div id="data">
+        <div id="availableBooksSearch">
           <h3>Seznam dostupných knih</h3>
           <input
             type="text"
@@ -25,13 +26,14 @@
           />
           <div class="book-list" id="availableBooks"></div>
         </div>
-        <div>
+        <div id="selected-books-container">
           <h3>Vybrané knihy (<span id="selectedCount">0</span>/20)</h3>
           <div class="selected-books" id="selectedBooks"></div>
-          <button onclick="generatePDF()" class="export-button">
-            Stáhnout seznam (PDF)
-          </button>
         </div>
+      </div>
+        <button onclick="generatePDF()" class="export-button">
+          Stáhnout seznam (PDF)
+        </button>
       </div>
     </div>
 
