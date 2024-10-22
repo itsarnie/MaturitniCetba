@@ -1,0 +1,702 @@
+[
+  {
+    "title": "Svatý Xaverius",
+    "author": "Arbes, J.",
+    "period": "19",
+    "genre": "próza",
+    "isCzech": true
+  },
+  {
+    "title": "Já, robot",
+    "author": "Asimov, I.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Otec Goriot",
+    "author": "Balzac, H.",
+    "period": "19",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Květy zla",
+    "author": "Baudelaire, Ch.",
+    "period": "19",
+    "genre": "poezie",
+    "isCzech": false
+  },
+  {
+    "title": "Čekání na Godota",
+    "author": "Beckett, S.",
+    "period": "20",
+    "genre": "drama",
+    "isCzech": false
+  },
+  {
+    "title": "451 stupňů Fahrenheita",
+    "author": "Bradbury, R.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Cizinec",
+    "author": "Camus, A.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Chladnokrevně",
+    "author": "Capote, T.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Alchymista",
+    "author": "Coelho, P.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Bílá nemoc",
+    "author": "Čapek, K.",
+    "period": "20",
+    "genre": "drama",
+    "isCzech": true
+  },
+  {
+    "title": "Krakatit",
+    "author": "Čapek, K.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": true
+  },
+  {
+    "title": "Loupežník",
+    "author": "Čapek, K.",
+    "period": "20",
+    "genre": "drama",
+    "isCzech": true
+  },
+  {
+    "title": "Válka s mloky",
+    "author": "Čapek, K.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": true
+  },
+  {
+    "title": "Věc Makropulos",
+    "author": "Čapek, K.",
+    "period": "20",
+    "genre": "drama",
+    "isCzech": true
+  },
+  {
+    "title": "Nový epochální výlet pana Broučka, tentokráte do XV.století",
+    "author": "Čech, Sv.",
+    "period": "19",
+    "genre": "próza",
+    "isCzech": true
+  },
+  {
+    "title": "Nadějné vyhlídky",
+    "author": "Dickens, Ch.",
+    "period": "19",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Zločin a trest",
+    "author": "Dostojevskij, F. M.",
+    "period": "19",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Němá barikáda",
+    "author": "Drda, J.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": true
+  },
+  {
+    "title": "Krysař",
+    "author": "Dyk, V.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": true
+  },
+  {
+    "title": "Jméno růže",
+    "author": "Eco, U.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Kytice",
+    "author": "Erben, K. J.",
+    "period": "19",
+    "genre": "poezie",
+    "isCzech": true
+  },
+  {
+    "title": "Malý princ",
+    "author": "Exupéry, A. de Saint",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Deník Anne Frankové",
+    "author": "Franková, A.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Spalovač mrtvol",
+    "author": "Fuks, L.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": true
+  },
+  {
+    "title": "Radosti života",
+    "author": "Gellner, F.",
+    "period": "20",
+    "genre": "poezie",
+    "isCzech": true
+  },
+  {
+    "title": "Utrpení mladého Werthera",
+    "author": "Goethe, J. W.",
+    "period": "18",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Revizor",
+    "author": "Gogol, N. V.",
+    "period": "19",
+    "genre": "drama",
+    "isCzech": false
+  },
+  {
+    "title": "Pán much",
+    "author": "Golding, W.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Audience",
+    "author": "Havel, V.",
+    "period": "20",
+    "genre": "drama",
+    "isCzech": true
+  },
+  {
+    "title": "Křest svatého Vladimíra",
+    "author": "Havlíček Borovský, K.",
+    "period": "19",
+    "genre": "poezie",
+    "isCzech": true
+  },
+  {
+    "title": "Tyrolské elegie",
+    "author": "Havlíček Borovský, K.",
+    "period": "19",
+    "genre": "poezie",
+    "isCzech": true
+  },
+  {
+    "title": "Hlava XXII.",
+    "author": "Heller, J.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Stařec a moře",
+    "author": "Hemingway, E.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Obsluhoval jsem anglického krále",
+    "author": "Hrabal, B.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": true
+  },
+  {
+    "title": "Ostře sledované vlaky",
+    "author": "Hrabal, B.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": true
+  },
+  {
+    "title": "Blues pro bláznivou holku",
+    "author": "Hrabě, V.",
+    "period": "20",
+    "genre": "poezie",
+    "isCzech": true
+  },
+  {
+    "title": "Romance pro křídlovku",
+    "author": "Hrubín, F.",
+    "period": "20",
+    "genre": "poezie",
+    "isCzech": true
+  },
+  {
+    "title": "Chrám Matky Boží v Paříži",
+    "author": "Hugo, V.",
+    "period": "19",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Vražda v Orient expresu",
+    "author": "Christie, A.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Svět podle Garpa",
+    "author": "Irving, J.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Saturnin",
+    "author": "Jirotka, Z.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": true
+  },
+  {
+    "title": "Proces",
+    "author": "Kafka, F.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": true
+  },
+  {
+    "title": "Proměna",
+    "author": "Kafka, F.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": true
+  },
+  {
+    "title": "Nové mýty",
+    "author": "Kainar, J.",
+    "period": "20",
+    "genre": "poezie",
+    "isCzech": true
+  },
+  {
+    "title": "Na cestě",
+    "author": "Kerouac, J.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Vyhoďme ho z kola ven",
+    "author": "Kesey, K.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Misery",
+    "author": "King, S.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Osvícení",
+    "author": "King, S.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Kníška Karla Kryla",
+    "author": "Kryl, K.",
+    "period": "20",
+    "genre": "poezie",
+    "isCzech": true
+  },
+  {
+    "title": "Nesnesitelná lehkost bytí",
+    "author": "Kundera, M.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": true
+  },
+  {
+    "title": "Směšné lásky",
+    "author": "Kundera, M.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": true
+  },
+  {
+    "title": "Tulák po hvězdách",
+    "author": "London, J.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Modlitba pro Kateřinu Horovitzovou",
+    "author": "Lustig, A.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": true
+  },
+  {
+    "title": "Máj",
+    "author": "Mácha, K. H.",
+    "period": "19",
+    "genre": "poezie",
+    "isCzech": true
+  },
+  {
+    "title": "Mastičkář",
+    "author": "Anonym",
+    "period": "18",
+    "genre": "drama",
+    "isCzech": true
+  },
+  {
+    "title": "Kulička",
+    "author": "Maupassant, G.",
+    "period": "19",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Lakomec",
+    "author": "Molière",
+    "period": "18",
+    "genre": "drama",
+    "isCzech": false
+  },
+  {
+    "title": "Horalka",
+    "author": "Moravia, A.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Maryša",
+    "author": "Mrštíkové, A. a V.",
+    "period": "19",
+    "genre": "drama",
+    "isCzech": true
+  },
+  {
+    "title": "Lolita",
+    "author": "Nabokov, V. V.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Balady a romance",
+    "author": "Neruda, J.",
+    "period": "19",
+    "genre": "poezie",
+    "isCzech": true
+  },
+  {
+    "title": "Povídky malostranské",
+    "author": "Neruda, J.",
+    "period": "19",
+    "genre": "próza",
+    "isCzech": true
+  },
+  {
+    "title": "Manon Lescaut",
+    "author": "Nezval, V.",
+    "period": "20",
+    "genre": "poezie",
+    "isCzech": true
+  },
+  {
+    "title": "Nikola Šuhaj loupežník",
+    "author": "Olbracht, I.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": true
+  },
+  {
+    "title": "1984",
+    "author": "Orwell, G.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Farma zvířat",
+    "author": "Orwell, G.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Mladý muž a bílá velryba",
+    "author": "Páral, V.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": true
+  },
+  {
+    "title": "Smrt krásných srnců",
+    "author": "Pavel, O.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": true
+  },
+  {
+    "title": "Podkoní a žák",
+    "author": "Anonym",
+    "period": "18",
+    "genre": "poezie",
+    "isCzech": true
+  },
+  {
+    "title": "Jáma a kyvadlo",
+    "author": "Poe, E. A.",
+    "period": "19",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Bylo nás pět",
+    "author": "Poláček, K.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": true
+  },
+  {
+    "title": "Piková dáma",
+    "author": "Puškin, A. S.",
+    "period": "19",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Kalibův zločin",
+    "author": "Rais, K. V.",
+    "period": "19",
+    "genre": "próza",
+    "isCzech": true
+  },
+  {
+    "title": "Na západní frontě klid",
+    "author": "Remarque, E. M.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Petr a Lucie",
+    "author": "Rolland, R.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Kdo chytá v žitě",
+    "author": "Salinger, J. D.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Zaklínač I.: Poslední přání",
+    "author": "Sapkowski, A.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Na vlnách TSF",
+    "author": "Seifert, J.",
+    "period": "20",
+    "genre": "poezie",
+    "isCzech": true
+  },
+  {
+    "title": "Hamlet",
+    "author": "Shakespeare, W.",
+    "period": "18",
+    "genre": "drama",
+    "isCzech": false
+  },
+  {
+    "title": "Romeo a Julie",
+    "author": "Shakespeare, W.",
+    "period": "18",
+    "genre": "drama",
+    "isCzech": false
+  },
+  {
+    "title": "Othello",
+    "author": "Shakespeare, W.",
+    "period": "18",
+    "genre": "drama",
+    "isCzech": false
+  },
+  {
+    "title": "Zkrocení zlé ženy",
+    "author": "Shakespeare, W.",
+    "period": "18",
+    "genre": "drama",
+    "isCzech": false
+  },
+  {
+    "title": "Pygmalion",
+    "author": "Shaw, G. B.",
+    "period": "20",
+    "genre": "drama",
+    "isCzech": false
+  },
+  {
+    "title": "Vyšetřování ztráty třídní knihy",
+    "author": "Smoljak, L., Svěrák, Z.",
+    "period": "20",
+    "genre": "drama",
+    "isCzech": true
+  },
+  {
+    "title": "Antigona",
+    "author": "Sofokles",
+    "period": "18",
+    "genre": "drama",
+    "isCzech": false
+  },
+  {
+    "title": "Jeden den Ivana Děnisoviče",
+    "author": "Solženicyn, A.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "O myších a lidech",
+    "author": "Steinbeck, J.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Sophiina volba",
+    "author": "Styron, W.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Občanský průkaz",
+    "author": "Šabach, P.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": true
+  },
+  {
+    "title": "Zbabělci",
+    "author": "Škvorecký, J.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": true
+  },
+  {
+    "title": "Stříbrný vítr",
+    "author": "Šrámek, F.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": true
+  },
+  {
+    "title": "Společenstvo prstenu",
+    "author": "Tolkien, J. R. R.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Strakonický dudák",
+    "author": "Tyl, J. K.",
+    "period": "19",
+    "genre": "drama",
+    "isCzech": true
+  },
+  {
+    "title": "Rozmarné léto",
+    "author": "Vančura, V.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": true
+  },
+  {
+    "title": "Báječná léta pod psa",
+    "author": "Viewegh, M.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": true
+  },
+  {
+    "title": "Malý testament",
+    "author": "Villon, F.",
+    "period": "18",
+    "genre": "poezie",
+    "isCzech": false
+  },
+  {
+    "title": "Balada z hadrů",
+    "author": "Voskovec, J., Werich, J.",
+    "period": "20",
+    "genre": "drama",
+    "isCzech": true
+  },
+  {
+    "title": "Noc na Karlštejně",
+    "author": "Vrchlický, J.",
+    "period": "19",
+    "genre": "drama",
+    "isCzech": true
+  },
+  {
+    "title": "Den trifidů",
+    "author": "Wyndham, J.",
+    "period": "20",
+    "genre": "próza",
+    "isCzech": false
+  },
+  {
+    "title": "Okurková sezóna",
+    "author": "Žáček, J.",
+    "period": "20",
+    "genre": "poezie",
+    "isCzech": true
+  }
+]

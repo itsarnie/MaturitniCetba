@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kontrola maturitní četby</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Kontrola maturitní četby</h1>
+      <div class="rules">
+        <h2>Pravidla výběru knih</h2>
+        <div id="validationResults"></div>
+      </div>
+
+      <div class="book-selection">
+        <div>
+          <h3>Seznam dostupných knih</h3>
+          <input
+            type="text"
+            class="search-box"
+            id="searchBox"
+            placeholder="Vyhledat knihu..."
+          />
+          <div class="book-list" id="availableBooks"></div>
+        </div>
+        <div>
+          <h3>Vybrané knihy (<span id="selectedCount">0</span>/20)</h3>
+          <div class="selected-books" id="selectedBooks"></div>
+          <button onclick="generatePDF()" class="export-button">
+            Stáhnout seznam (PDF)
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      © 2024 <span>Matěj Ričl</span>,
+      <span>Střední průmyslová škola a Vyšší odborná škola Kladno</span>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.70/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.70/vfs_fonts.js"></script>
+
+    <script src="main.js"></script>
+  </body>
+</html>
