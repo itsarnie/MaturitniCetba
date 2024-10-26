@@ -80,6 +80,12 @@ h3 {
   border: 1px solid #ddd;
 }
 
+#selectedBooks {
+  height: auto; /* Výška bude řízena JavaScriptem */
+  overflow-y: auto; /* Umožní rolování uvnitř pevné výšky */
+  border: 1px solid #ddd;
+}
+
 #selected-books-container {
   display: grid;
   grid-template-rows: auto 1fr;
@@ -174,4 +180,116 @@ footer span {
 
 .export-button:hover {
   background-color: #45a049;
+}
+
+
+
+.dark-mode-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background: linear-gradient(120deg, #1a1a1a, #2d2d2d);
+  color: #ffffff;
+}
+
+.dark-mode .container {
+  background-color: #333333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode h1 {
+  color: #66b3ff;
+}
+
+.dark-mode h3 {
+  color: #66b3ff;
+}
+
+.dark-mode .rules,
+.dark-mode .book-list,
+.dark-mode .selected-books {
+  background-color: #2d2d2d;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .book-item {
+  background-color: #404040;
+  color: #ffffff;
+}
+
+.dark-mode .book-item:hover {
+  background-color: #4d4d4d;
+  box-shadow: 0 2px 8px rgba(102, 179, 255, 0.2);
+}
+
+.dark-mode .genre-proza {
+  background-color: #1a365d;
+  color: #66b3ff;
+}
+
+.dark-mode .genre-poezie {
+  background-color: #4a235a;
+  color: #e1bee7;
+}
+
+.dark-mode .genre-drama {
+  background-color: #1b4d2e;
+  color: #81c784;
+}
+
+.dark-mode .validation-item.valid {
+  background-color: #1b4d2e;
+  color: #81c784;
+}
+
+.dark-mode .validation-item.invalid {
+  background-color: #4d1f23;
+  color: #ef9a9a;
+}
+
+.dark-mode .search-box {
+  background-color: #404040;
+  border-color: #666666;
+  color: #ffffff;
+}
+
+.dark-mode .search-box:focus {
+  box-shadow: 0 0 5px rgba(102, 179, 255, 0.5);
+}
+
+.dark-mode footer {
+  color: #888888;
+}
+
+.dark-mode footer span {
+  color: #cccccc;
+}
+
+.dark-mode .export-button {
+  background-color: #2e7d32;
+}
+
+.dark-mode .export-button:hover {
+  background-color: #388e3c;
+}
+
+.book-list {
+  max-height: 70vh; /* Maximální výška bude 70 % výšky obrazovky */
+  overflow-y: auto; /* Umožňuje posouvání uvnitř zafixované výšky */
+  border: 1px solid #ddd;
 }

@@ -196,6 +196,60 @@ function getGenreColor(genre) {
   }
 }
 
+// Add this to main.js
+
+// Add dark mode toggle button to the header
+const header = document.querySelector('h1');
+const darkModeToggle = document.createElement('button');
+darkModeToggle.innerHTML = '🌙';
+darkModeToggle.className = 'dark-mode-toggle';
+darkModeToggle.setAttribute('title', 'Toggle Dark Mode');
+header.parentNode.insertBefore(darkModeToggle, header.nextSibling);
+
+// Check for saved user preference, first in localStorage, then system setting
+const darkModePreference = localStorage.getItem('darkMode') || 
+  (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'enabled' : 'disabled');
+
+// Initialize dark mode based on saved preference
+if (darkModePreference === 'enabled') {
+  document.body.classList.add('dark-mode');
+  darkModeToggle.innerHTML = '☀️';
+}
+
+// Toggle dark mode
+darkModeToggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  
+  // Update button icon
+  darkModeToggle.innerHTML = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+  
+  // Save preference
+  localStorage.setItem('darkMode', 
+    document.body.classList.contains('dark-mode') ? 'enabled' : 'disabled'
+  );
+});
+
+// Listen for system theme changes
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+  if (!localStorage.getItem('darkMode')) {  // Only if user hasn't manually set preference
+    document.body.classList.toggle('dark-mode', e.matches);
+    darkModeToggle.innerHTML = e.matches ? '☀️' : '🌙';
+  }
+});
+
+// Funkce pro nastavení výšky sekce Selected Books
+function setSelectedBooksHeight() {
+  const selectedBooks = document.querySelector('#selectedBooks');
+  const viewportHeight = window.innerHeight;
+  const maxListHeight = viewportHeight * 0.4; // Nastavíme výšku na 40 % výšky obrazovky
+  selectedBooks.style.height = maxListHeight + 'px';
+}
+
+// Nastavíme výšku při načtení stránky a při změně velikosti okna
+window.addEventListener('load', setSelectedBooksHeight);
+window.addEventListener('resize', setSelectedBooksHeight);
+
+
 function validateSelection() {
   const results = [];
   const validationContainer = document.getElementById("validationResults");
