@@ -196,8 +196,6 @@ function getGenreColor(genre) {
   }
 }
 
-// Add this to main.js
-
 // Add dark mode toggle button to the header
 const header = document.querySelector('h1');
 const darkModeToggle = document.createElement('button');
