@@ -5,16 +5,19 @@ body {
   padding: 20px;
   background: linear-gradient(120deg, #f0f0f0, #ffffff);
 }
+
 .container {
   background-color: #fff;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  position: relative; /* Umístění pro vnořená absolutní tlačítka */
 }
+
 .container:hover {
   transform: translateY(-5px);
 }
+
 h1,
 h2,
 h3 {
@@ -185,8 +188,8 @@ footer span {
 
 
 .dark-mode-toggle {
-  position: absolute;
-  top: 20px;
+  position: absolute; /* Pozice uvnitř kontejneru */
+  top: 20px; /* Umístění tlačítka uvnitř kontejneru */
   right: 20px;
   background: none;
   border: none;
@@ -194,7 +197,7 @@ footer span {
   cursor: pointer;
   padding: 8px;
   border-radius: 50%;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.5s ease;
 }
 
 .dark-mode-toggle:hover {
@@ -288,8 +291,40 @@ body.dark-mode {
   background-color: #388e3c;
 }
 
-.book-list {
-  max-height: 70vh; /* Maximální výška bude 70 % výšky obrazovky */
-  overflow-y: auto; /* Umožňuje posouvání uvnitř zafixované výšky */
-  border: 1px solid #ddd;
+/* Styl pro custom notifikaci */
+.notification {
+  position: fixed; /* Umístí notifikaci pevně vůči oknu */
+  bottom: 50px; /* Odsadí ji od spodního okraje obrazovky */
+  left: 50%; /* Horizontálně zarovná na střed */
+  transform: translateX(-50%); /* Středové zarovnání */
+  background-color: #333;
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1000; /* Zajistí, že bude nad ostatními prvky */
+}
+
+/* Viditelná notifikace */
+.notification.visible {
+  opacity: 1;
+}
+
+/* Skrytá notifikace */
+.notification.hidden {
+  opacity: 0;
+}
+
+.notification button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
 }

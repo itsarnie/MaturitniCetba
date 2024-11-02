@@ -87,7 +87,7 @@ function updateBookLists() {
 
 function selectBook(book) {
   if (selectedBooks.length >= 20) {
-    alert("Již máte vybráno maximum 20 knih!");
+    showNotification("Již máte vybráno maximum 20 knih!");
     return;
   }
 
@@ -181,6 +181,42 @@ function generatePDF() {
   // Vygenerování a otevření PDF v novém okně
   pdfMake.createPdf(docDefinition).download("seznam-cetby.pdf");
 }
+
+// Funkce pro zobrazení notifikace
+function showNotification(message) {
+  const notification = document.getElementById('customNotification');
+  const messageSpan = document.getElementById('notificationMessage');
+  messageSpan.textContent = message; // Nastaví text notifikace
+  notification.classList.remove('hidden');
+  notification.classList.add('visible');
+
+  // Skryje notifikaci po 3 sekundách
+  setTimeout(() => {
+    hideNotification();
+  }, 3000);
+}
+
+// Funkce pro skrytí notifikace
+function hideNotification() {
+  const notification = document.getElementById('customNotification');
+  notification.classList.remove('visible');
+  notification.classList.add('hidden');
+}
+
+// Funkce pro kontrolu pozice při scrollování
+function checkScroll() {
+  const notification = document.getElementById("customNotification");
+
+  // Pokud uživatel odscrolloval dostatečně dolů, zobrazíme notifikaci
+  if (window.scrollY + window.innerHeight >= document.body.offsetHeight - 200) {
+    notification.classList.add("visible");
+  } else {
+    notification.classList.remove("visible");
+  }
+}
+
+// Event listener pro posun stránky
+window.addEventListener("scroll", checkScroll);
 
 // Pomocná funkce pro přiřazení barvy podle žánru
 function getGenreColor(genre) {
