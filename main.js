@@ -125,8 +125,8 @@ function removeBook(book) {
 
 function generatePDF() {
   const docDefinition = {
-    pageSize: "A4", // Zajištění, že se výstup vejde na stránku A4
-    pageMargins: [40, 60, 40, 60], // Okraje stránky
+    pageSize: "A4",
+    pageMargins: [40, 60, 40, 60],
     content: [
       {
         text: "Seznam maturitní četby",
@@ -154,6 +154,27 @@ function generatePDF() {
           };
         }),
       },
+      {
+        text: "\n\n\nPodpisy",
+        style: "subheader",
+        alignment: "center",
+      },
+      {
+        columns: [
+          {
+            width: "50%",
+            text: "_________________________\nPodpis učitele",
+            alignment: "center",
+            margin: [0, 20, 0, 0],
+          },
+          {
+            width: "50%",
+            text: "_________________________\nPodpis žáka",
+            alignment: "center",
+            margin: [0, 20, 0, 0],
+          },
+        ],
+      },
     ],
     styles: {
       header: {
@@ -163,7 +184,7 @@ function generatePDF() {
       },
       subheader: {
         fontSize: 12,
-        margin: [0, 10, 0, 5],
+        margin: [0, 20, 0, 10],
       },
     },
     footer: function (currentPage, pageCount) {
@@ -181,6 +202,7 @@ function generatePDF() {
   // Vygenerování a otevření PDF v novém okně
   pdfMake.createPdf(docDefinition).download("seznam-cetby.pdf");
 }
+
 
 // Funkce pro zobrazení notifikace
 function showNotification(message) {
