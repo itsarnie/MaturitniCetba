@@ -4,7 +4,7 @@ let availableBooks = [];
 let removedBooks = [];
 let knownAutors = [];
 
-fetch("data.json")
+fetch('data.json')
   .then((response) => response.json())
   .then((data) => {
     books = data;
@@ -19,14 +19,14 @@ fetch("data.json")
     updateBookLists();
   })
   .catch((error) => {
-    console.error("Error loading JSON data:", error);
+    console.error('Error loading JSON data:', error);
   });
 
 function createBookElement(book, isSelected = false) {
-  const div = document.createElement("div");
-  div.className = "book-item";
+  const div = document.createElement('div');
+  div.className = 'book-item';
 
-  const mainContent = document.createElement("div");
+  const mainContent = document.createElement('div');
   mainContent.innerHTML = `
                 <div>${book.title}</div>
                 <div class="book-meta">
@@ -64,12 +64,12 @@ function updateBookLists() {
     }
     return a.title.localeCompare(b.title);
   });
-  const availableContainer = document.getElementById("availableBooks");
-  const selectedContainer = document.getElementById("selectedBooks");
-  const countElement = document.getElementById("selectedCount");
+  const availableContainer = document.getElementById('availableBooks');
+  const selectedContainer = document.getElementById('selectedBooks');
+  const countElement = document.getElementById('selectedCount');
 
-  availableContainer.innerHTML = "";
-  selectedContainer.innerHTML = "";
+  availableContainer.innerHTML = '';
+  selectedContainer.innerHTML = '';
 
   availableBooks.forEach((book) => {
     const div = createBookElement(book, false);
@@ -87,13 +87,13 @@ function updateBookLists() {
 
 function selectBook(book) {
   if (selectedBooks.length >= 20) {
-    showNotification("Již máte vybráno maximum 20 knih!");
+    showNotification('Již máte vybráno maximum 20 knih!');
     return;
   }
 
   const authorBooks = selectedBooks.filter((b) => b.author === book.author);
   if (authorBooks.length >= 2) {
-    alert("Od jednoho autora můžete vybrat maximálně 2 díla!");
+    alert('Od jednoho autora můžete vybrat maximálně 2 díla!');
     return;
   }
 
@@ -125,13 +125,13 @@ function removeBook(book) {
 
 function generatePDF() {
   const docDefinition = {
-    pageSize: "A4",
+    pageSize: 'A4',
     pageMargins: [40, 60, 40, 60],
     content: [
       {
-        text: "Seznam maturitní četby",
-        style: "header",
-        alignment: "center",
+        text: 'Seznam maturitní četby',
+        style: 'header',
+        alignment: 'center',
       },
       {
         ol: selectedBooks.map((book) => {
@@ -139,14 +139,14 @@ function generatePDF() {
             columns: [
               {
                 text: `${book.title}`,
-                width: "40%",
+                width: '40%',
                 bold: true,
               },
-              { text: book.author, width: "30%", italics: true },
+              { text: book.author, width: '30%', italics: true },
               {
                 text: book.genre,
-                width: "30%",
-                alignment: "right",
+                width: '30%',
+                alignment: 'right',
                 color: getGenreColor(book.genre),
               },
             ],
@@ -155,22 +155,22 @@ function generatePDF() {
         }),
       },
       {
-        text: "\n\n\nPodpisy",
-        style: "subheader",
-        alignment: "center",
+        text: '\n\n\nPodpisy',
+        style: 'subheader',
+        alignment: 'center',
       },
       {
         columns: [
           {
-            width: "50%",
-            text: "_________________________\nPodpis učitele",
-            alignment: "center",
+            width: '50%',
+            text: '_________________________\nPodpis učitele',
+            alignment: 'center',
             margin: [0, 20, 0, 0],
           },
           {
-            width: "50%",
-            text: "_________________________\nPodpis žáka",
-            alignment: "center",
+            width: '50%',
+            text: '_________________________\nPodpis žáka',
+            alignment: 'center',
             margin: [0, 20, 0, 0],
           },
         ],
@@ -190,9 +190,9 @@ function generatePDF() {
     footer: function (currentPage, pageCount) {
       return {
         text: `SPŠ a VOŠ Kladno - ${new Date().toLocaleDateString(
-          "cs-CZ"
+          'cs-CZ'
         )} (Strana ${currentPage} z ${pageCount})`,
-        alignment: "center",
+        alignment: 'center',
         fontSize: 10,
         margin: [0, 0, 0, 20],
       };
@@ -200,9 +200,8 @@ function generatePDF() {
   };
 
   // Vygenerování a otevření PDF v novém okně
-  pdfMake.createPdf(docDefinition).download("seznam-cetby.pdf");
+  pdfMake.createPdf(docDefinition).download('seznam-cetby.pdf');
 }
-
 
 // Funkce pro zobrazení notifikace
 function showNotification(message) {
@@ -227,30 +226,30 @@ function hideNotification() {
 
 // Funkce pro kontrolu pozice při scrollování
 function checkScroll() {
-  const notification = document.getElementById("customNotification");
+  const notification = document.getElementById('customNotification');
 
   // Pokud uživatel odscrolloval dostatečně dolů, zobrazíme notifikaci
   if (window.scrollY + window.innerHeight >= document.body.offsetHeight - 200) {
-    notification.classList.add("visible");
+    notification.classList.add('visible');
   } else {
-    notification.classList.remove("visible");
+    notification.classList.remove('visible');
   }
 }
 
 // Event listener pro posun stránky
-window.addEventListener("scroll", checkScroll);
+window.addEventListener('scroll', checkScroll);
 
 // Pomocná funkce pro přiřazení barvy podle žánru
 function getGenreColor(genre) {
   switch (genre) {
-    case "próza":
-      return "#007bff";
-    case "poezie":
-      return "#9c27b0";
-    case "drama":
-      return "#4caf50";
+    case 'próza':
+      return '#007bff';
+    case 'poezie':
+      return '#9c27b0';
+    case 'drama':
+      return '#4caf50';
     default:
-      return "#000000";
+      return '#000000';
   }
 }
 
@@ -263,8 +262,11 @@ darkModeToggle.setAttribute('title', 'Toggle Dark Mode');
 header.parentNode.insertBefore(darkModeToggle, header.nextSibling);
 
 // Check for saved user preference, first in localStorage, then system setting
-const darkModePreference = localStorage.getItem('darkMode') || 
-  (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'enabled' : 'disabled');
+const darkModePreference =
+  localStorage.getItem('darkMode') ||
+  (window.matchMedia('(prefers-color-scheme: dark)').matches
+    ? 'enabled'
+    : 'disabled');
 
 // Initialize dark mode based on saved preference
 if (darkModePreference === 'enabled') {
@@ -275,23 +277,29 @@ if (darkModePreference === 'enabled') {
 // Toggle dark mode
 darkModeToggle.addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
-  
+
   // Update button icon
-  darkModeToggle.innerHTML = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
-  
+  darkModeToggle.innerHTML = document.body.classList.contains('dark-mode')
+    ? '☀️'
+    : '🌙';
+
   // Save preference
-  localStorage.setItem('darkMode', 
+  localStorage.setItem(
+    'darkMode',
     document.body.classList.contains('dark-mode') ? 'enabled' : 'disabled'
   );
 });
 
 // Listen for system theme changes
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-  if (!localStorage.getItem('darkMode')) {  // Only if user hasn't manually set preference
-    document.body.classList.toggle('dark-mode', e.matches);
-    darkModeToggle.innerHTML = e.matches ? '☀️' : '🌙';
-  }
-});
+window
+  .matchMedia('(prefers-color-scheme: dark)')
+  .addEventListener('change', (e) => {
+    if (!localStorage.getItem('darkMode')) {
+      // Only if user hasn't manually set preference
+      document.body.classList.toggle('dark-mode', e.matches);
+      darkModeToggle.innerHTML = e.matches ? '☀️' : '🌙';
+    }
+  });
 
 // Funkce pro nastavení výšky sekce Selected Books
 function setSelectedBooksHeight() {
@@ -305,23 +313,22 @@ function setSelectedBooksHeight() {
 window.addEventListener('load', setSelectedBooksHeight);
 window.addEventListener('resize', setSelectedBooksHeight);
 
-
 function validateSelection() {
   const results = [];
-  const validationContainer = document.getElementById("validationResults");
+  const validationContainer = document.getElementById('validationResults');
 
   const totalCount = selectedBooks.length;
-  const before1800 = selectedBooks.filter((b) => b.period === "18").length;
-  const century19 = selectedBooks.filter((b) => b.period === "19").length;
+  const before1800 = selectedBooks.filter((b) => b.period === '18').length;
+  const century19 = selectedBooks.filter((b) => b.period === '19').length;
   const century20World = selectedBooks.filter(
-    (b) => b.period === "20" && !b.isCzech
+    (b) => b.period === '20' && !b.isCzech
   ).length;
   const century20Czech = selectedBooks.filter(
-    (b) => b.period === "20" && b.isCzech
+    (b) => b.period === '20' && b.isCzech
   ).length;
-  const prose = selectedBooks.filter((b) => b.genre === "próza").length;
-  const poetry = selectedBooks.filter((b) => b.genre === "poezie").length;
-  const drama = selectedBooks.filter((b) => b.genre === "drama").length;
+  const prose = selectedBooks.filter((b) => b.genre === 'próza').length;
+  const poetry = selectedBooks.filter((b) => b.genre === 'poezie').length;
+  const drama = selectedBooks.filter((b) => b.genre === 'drama').length;
 
   results.push({
     valid: totalCount === 20,
@@ -360,16 +367,16 @@ function validateSelection() {
     .map(
       (result) => `
                 <div class="validation-item ${
-                  result.valid ? "valid" : "invalid"
+                  result.valid ? 'valid' : 'invalid'
                 }">
-                    ${result.valid ? "✓" : "✗"} ${result.message}
+                    ${result.valid ? '✓' : '✗'} ${result.message}
                 </div>
             `
     )
-    .join("");
+    .join('');
 }
 
-document.getElementById("searchBox").addEventListener("input", (e) => {
+document.getElementById('searchBox').addEventListener('input', (e) => {
   const searchTerm = e.target.value.toLowerCase();
   const filteredBooks = books.filter(
     (book) =>
