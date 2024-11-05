@@ -378,12 +378,15 @@ function validateSelection() {
 
 document.getElementById('searchBox').addEventListener('input', (e) => {
   const searchTerm = e.target.value.toLowerCase();
-  const filteredBooks = books.filter(
+  let filteredBooks = books.filter(
     (book) =>
       !selectedBooks.includes(book) &&
       (book.title.toLowerCase().includes(searchTerm) ||
         book.author.toLowerCase().includes(searchTerm))
   );
+
+  filteredBooks = filteredBooks.filter((book) => !removedBooks.includes(book));
+
   availableBooks = filteredBooks;
   updateBookLists();
 });
