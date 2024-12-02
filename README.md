@@ -38,7 +38,7 @@ Pokud chcete aplikaci spustit lokálně, postupujte následovně:
 
 1. Naklonujte si repozitář:
    ```bash
-   git clone https://github.com/vase-uzivatelske-jmeno/maturitni-cetba.git
+   https://github.com/itsarnie/MaturitniCetba.git
    cd maturitni-cetba
    ```
   
