@@ -22,29 +22,40 @@ fetch('data.json')
     console.error('Error loading JSON data:', error);
   });
 
-function createBookElement(book, isSelected = false) {
-  const div = document.createElement('div');
-  div.className = 'book-item';
-
-  const mainContent = document.createElement('div');
-  mainContent.innerHTML = `
-                <div>${book.title}</div>
-                <div class="book-meta">
-                    ${book.author}
-                    <span class="genre-badge genre-${book.genre}">${book.genre}</span>
-                </div>
-            `;
-
-  div.appendChild(mainContent);
-
-  if (isSelected) {
-    div.onclick = () => removeBook(book);
-  } else {
-    div.onclick = () => selectBook(book);
+  function createBookElement(book, isSelected = false) {
+    const div = document.createElement('div');
+    div.className = 'book-item';
+  
+    // Hlavní obsah knihy
+    const mainContent = document.createElement('div');
+    mainContent.className = 'book-main-content';
+    mainContent.innerHTML = `
+      <div>${book.title}</div>
+      <div class="book-meta">
+        ${book.author}
+        <span class="genre-badge genre-${book.genre}">${book.genre}</span>
+      </div>
+    `;
+  
+    // Rok knihy
+    const yearContent = document.createElement('div');
+    yearContent.className = 'book-year';
+    yearContent.textContent = book.year || 'N/A'; // Zobrazí "N/A", pokud není rok k dispozici
+  
+    // Přidáme obsah do hlavního kontejneru
+    div.appendChild(mainContent);
+    div.appendChild(yearContent);
+  
+    // Nastavíme akci při kliknutí
+    if (isSelected) {
+      div.onclick = () => removeBook(book);
+    } else {
+      div.onclick = () => selectBook(book);
+    }
+  
+    return div;
   }
-
-  return div;
-}
+  
 
 function updateBookLists() {
   availableBooks.sort((a, b) => a.author.localeCompare(b.author));
@@ -93,7 +104,7 @@ function selectBook(book) {
 
   const authorBooks = selectedBooks.filter((b) => b.author === book.author);
   if (authorBooks.length >= 2) {
-    alert('Od jednoho autora můžete vybrat maximálně 2 díla!');
+    showNotification('Od jednoho autora můžete vybrat maximálně 2 díla!');
     return;
   }
 
@@ -123,7 +134,47 @@ function removeBook(book) {
   updateBookLists();
 }
 
+function isSelectionValid() {
+  const totalCount = selectedBooks.length;
+  const before1800 = selectedBooks.filter((b) => b.period === '18').length;
+  const century19 = selectedBooks.filter((b) => b.period === '19').length;
+  const century20World = selectedBooks.filter(
+    (b) => b.period === '20' && !b.isCzech
+  ).length;
+  const century20Czech = selectedBooks.filter(
+    (b) => b.period === '20' && b.isCzech
+  ).length;
+  const prose = selectedBooks.filter((b) => b.genre === 'próza').length;
+  const poetry = selectedBooks.filter((b) => b.genre === 'poezie').length;
+  const drama = selectedBooks.filter((b) => b.genre === 'drama').length;
+
+  return (
+    totalCount === 20 &&
+    before1800 >= 2 &&
+    century19 >= 3 &&
+    century20World >= 4 &&
+    century20Czech >= 5 &&
+    prose >= 2 &&
+    poetry >= 2 &&
+    drama >= 2
+  );
+}
+
 function generatePDF() {
+  const isDebugMode = typeof process !== 'undefined' && process.env.DEBUG_MODE === 'true';
+
+  if (!isDebugMode && !isSelectionValid()) {
+    showNotification('Výběr knih nesplňuje všechny požadované podmínky!');
+    return;
+  }
+
+  // Získáme hodnoty jména a třídy z inputů
+  const userName = document.getElementById('userName').value || 'Nezadané_jméno';
+  const userClass = document.getElementById('userClass').value || 'Nezadaná_třída';
+
+  // Vytvoříme název souboru
+  const fileName = `${userClass}_${userName}_maturitni_cetba.pdf`.replace(/\s+/g, '_');
+
   const docDefinition = {
     pageSize: 'A4',
     pageMargins: [40, 60, 40, 60],
@@ -132,6 +183,12 @@ function generatePDF() {
         text: 'Seznam maturitní četby',
         style: 'header',
         alignment: 'center',
+      },
+      {
+        columns: [
+          { text: `Jméno: ${userName}`, width: '50%', style: 'subheader' },
+          { text: `Třída: ${userClass}`, width: '50%', style: 'subheader', alignment: 'right' },
+        ],
       },
       {
         ol: selectedBooks.map((book) => {
@@ -199,9 +256,10 @@ function generatePDF() {
     },
   };
 
-  // Vygenerování a otevření PDF v novém okně
-  pdfMake.createPdf(docDefinition).download('seznam-cetby.pdf');
+  // Vygenerování a stažení PDF s upraveným názvem souboru
+  pdfMake.createPdf(docDefinition).download(fileName);
 }
+
 
 // Funkce pro zobrazení notifikace
 function showNotification(message) {
@@ -344,11 +402,11 @@ function validateSelection() {
   });
   results.push({
     valid: century20World >= 4,
-    message: `Světová literatura 20. století: ${century20World}/4`,
+    message: `Světová literatura 20. a 21. století: ${century20World}/4`,
   });
   results.push({
     valid: century20Czech >= 5,
-    message: `Česká literatura 20. století: ${century20Czech}/5`,
+    message: `Česká literatura 20. a 21. století: ${century20Czech}/5`,
   });
   results.push({
     valid: prose >= 2,

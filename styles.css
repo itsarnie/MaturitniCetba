@@ -95,16 +95,28 @@ h3 {
 }
 
 .book-item {
+  display: flex;
+  justify-content: space-between; /* Zajistí, že rok bude na pravé straně */
+  align-items: center; /* Zarovná prvky vertikálně */
   padding: 10px;
   margin: 6px 0;
   border-radius: 8px;
   background-color: #ffffff;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
+
+.book-main-content {
+  flex-grow: 1; /* Hlavní obsah zabere zbývající prostor */
+}
+
+.book-year {
+  font-size: 0.9em;
+  color: #666; /* Neutrální barva textu */
+  text-align: right;
+  min-width: 50px; /* Zajistí dostatečný prostor pro rok */
+}
+
 .book-item:hover {
   background-color: #e9f0ff;
   box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
@@ -327,4 +339,53 @@ body.dark-mode {
   color: #fff;
   font-size: 1.2rem;
   cursor: pointer;
+}
+/* Styl pro světlý režim */
+.user-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f9fafb; /* Světlé pozadí */
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Jemný stín */
+}
+
+.user-info label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.user-info input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  background-color: #fff; /* Bílé pozadí */
+  color: #333; /* Tmavý text */
+}
+
+.user-info input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+/* Styl pro tmavý režim */
+body.dark-mode .user-info {
+  background-color: #2d2d2d; /* Tmavé pozadí */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Jemný stín */
+}
+
+body.dark-mode .user-info input {
+  background-color: #404040; /* Tmavší pozadí pro pole */
+  border-color: #666666;
+  color: #fff; /* Světlý text */
+}
+
+body.dark-mode .user-info input:focus {
+  border-color: #66b3ff; /* Světle modrý obrys */
+  box-shadow: 0 0 5px rgba(102, 179, 255, 0.5);
 }

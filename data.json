@@ -4,699 +4,799 @@
     "author": "Arbes, J.",
     "period": "19",
     "genre": "próza",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1873"
   },
   {
     "title": "Já, robot",
     "author": "Asimov, I.",
     "period": "20",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1950"
   },
   {
     "title": "Otec Goriot",
     "author": "Balzac, H.",
     "period": "19",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1835"
   },
   {
     "title": "Květy zla",
     "author": "Baudelaire, Ch.",
     "period": "19",
     "genre": "poezie",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1857"
   },
   {
     "title": "Čekání na Godota",
     "author": "Beckett, S.",
     "period": "20",
     "genre": "drama",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1952"
   },
   {
     "title": "451 stupňů Fahrenheita",
     "author": "Bradbury, R.",
     "period": "20",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1953"
   },
   {
     "title": "Cizinec",
     "author": "Camus, A.",
     "period": "20",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1942"
   },
   {
     "title": "Chladnokrevně",
     "author": "Capote, T.",
     "period": "20",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1966"
   },
   {
     "title": "Alchymista",
     "author": "Coelho, P.",
     "period": "20",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1988"
   },
   {
     "title": "Bílá nemoc",
     "author": "Čapek, K.",
     "period": "20",
     "genre": "drama",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1937"
   },
   {
     "title": "Krakatit",
     "author": "Čapek, K.",
     "period": "20",
     "genre": "próza",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1924"
   },
   {
     "title": "Loupežník",
     "author": "Čapek, K.",
     "period": "20",
     "genre": "drama",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1920"
   },
   {
     "title": "Válka s mloky",
     "author": "Čapek, K.",
     "period": "20",
     "genre": "próza",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1936"
   },
   {
     "title": "Věc Makropulos",
     "author": "Čapek, K.",
     "period": "20",
     "genre": "drama",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1922"
   },
   {
     "title": "Nový epochální výlet pana Broučka, tentokráte do XV.století",
     "author": "Čech, Sv.",
     "period": "19",
     "genre": "próza",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1888"
   },
   {
     "title": "Nadějné vyhlídky",
     "author": "Dickens, Ch.",
     "period": "19",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1861"
   },
   {
     "title": "Zločin a trest",
     "author": "Dostojevskij, F. M.",
     "period": "19",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1866"
   },
   {
     "title": "Němá barikáda",
     "author": "Drda, J.",
     "period": "20",
     "genre": "próza",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1946"
   },
   {
     "title": "Krysař",
     "author": "Dyk, V.",
     "period": "20",
     "genre": "próza",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1915"
   },
   {
     "title": "Jméno růže",
     "author": "Eco, U.",
     "period": "20",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1980"
   },
   {
     "title": "Kytice",
     "author": "Erben, K. J.",
     "period": "19",
     "genre": "poezie",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1853"
   },
   {
     "title": "Malý princ",
     "author": "Exupéry, A. de Saint",
     "period": "20",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1943"
   },
   {
     "title": "Deník Anne Frankové",
     "author": "Franková, A.",
     "period": "20",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1947"
   },
   {
     "title": "Spalovač mrtvol",
     "author": "Fuks, L.",
     "period": "20",
     "genre": "próza",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1967"
   },
   {
     "title": "Radosti života",
     "author": "Gellner, F.",
     "period": "20",
     "genre": "poezie",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1903"
   },
   {
     "title": "Utrpení mladého Werthera",
     "author": "Goethe, J. W.",
     "period": "18",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1774"
   },
   {
     "title": "Revizor",
     "author": "Gogol, N. V.",
     "period": "19",
     "genre": "drama",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1836"
   },
   {
     "title": "Pán much",
     "author": "Golding, W.",
     "period": "20",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1954"
   },
   {
     "title": "Audience",
     "author": "Havel, V.",
     "period": "20",
     "genre": "drama",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1975"
   },
   {
     "title": "Křest svatého Vladimíra",
     "author": "Havlíček Borovský, K.",
     "period": "19",
     "genre": "poezie",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1877"
   },
   {
     "title": "Tyrolské elegie",
     "author": "Havlíček Borovský, K.",
     "period": "19",
     "genre": "poezie",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1852"
   },
   {
     "title": "Hlava XXII.",
     "author": "Heller, J.",
     "period": "20",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1961"
   },
   {
     "title": "Stařec a moře",
     "author": "Hemingway, E.",
     "period": "20",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1952"
   },
   {
     "title": "Obsluhoval jsem anglického krále",
     "author": "Hrabal, B.",
     "period": "20",
     "genre": "próza",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1971"
   },
   {
     "title": "Ostře sledované vlaky",
     "author": "Hrabal, B.",
     "period": "20",
     "genre": "próza",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1965"
   },
   {
     "title": "Blues pro bláznivou holku",
     "author": "Hrabě, V.",
     "period": "20",
     "genre": "poezie",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1990"
   },
   {
     "title": "Romance pro křídlovku",
     "author": "Hrubín, F.",
     "period": "20",
     "genre": "poezie",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1962"
   },
   {
     "title": "Chrám Matky Boží v Paříži",
     "author": "Hugo, V.",
     "period": "19",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1831"
   },
   {
     "title": "Vražda v Orient expresu",
     "author": "Christie, A.",
     "period": "20",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1934"
   },
   {
     "title": "Svět podle Garpa",
     "author": "Irving, J.",
     "period": "20",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1978"
   },
   {
     "title": "Saturnin",
     "author": "Jirotka, Z.",
     "period": "20",
     "genre": "próza",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1942"
   },
   {
     "title": "Proces",
     "author": "Kafka, F.",
     "period": "20",
     "genre": "próza",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1925"
   },
   {
     "title": "Proměna",
     "author": "Kafka, F.",
     "period": "20",
     "genre": "próza",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1915"
   },
   {
     "title": "Nové mýty",
     "author": "Kainar, J.",
     "period": "20",
     "genre": "poezie",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1946"
   },
   {
     "title": "Na cestě",
     "author": "Kerouac, J.",
     "period": "20",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1957"
   },
   {
     "title": "Vyhoďme ho z kola ven",
     "author": "Kesey, K.",
     "period": "20",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1962"
   },
   {
     "title": "Misery",
     "author": "King, S.",
     "period": "20",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1987"
   },
   {
     "title": "Osvícení",
     "author": "King, S.",
     "period": "20",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1977"
   },
   {
     "title": "Kníška Karla Kryla",
     "author": "Kryl, K.",
     "period": "20",
     "genre": "poezie",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1972"
   },
   {
     "title": "Nesnesitelná lehkost bytí",
     "author": "Kundera, M.",
     "period": "20",
     "genre": "próza",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1984"
   },
   {
     "title": "Směšné lásky",
     "author": "Kundera, M.",
     "period": "20",
     "genre": "próza",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1963"
   },
   {
     "title": "Tulák po hvězdách",
     "author": "London, J.",
     "period": "20",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1915"
   },
   {
     "title": "Modlitba pro Kateřinu Horovitzovou",
     "author": "Lustig, A.",
     "period": "20",
     "genre": "próza",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1964"
   },
   {
     "title": "Máj",
     "author": "Mácha, K. H.",
     "period": "19",
     "genre": "poezie",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1836"
   },
   {
     "title": "Mastičkář",
     "author": "Anonym",
     "period": "18",
     "genre": "drama",
-    "isCzech": true
+    "isCzech": true,
+    "year": "kolem 1340"
   },
   {
     "title": "Kulička",
     "author": "Maupassant, G.",
     "period": "19",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1880"
   },
   {
     "title": "Lakomec",
     "author": "Molière",
     "period": "18",
     "genre": "drama",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1668"
   },
   {
     "title": "Horalka",
     "author": "Moravia, A.",
     "period": "20",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1957"
   },
   {
     "title": "Maryša",
     "author": "Mrštíkové, A. a V.",
     "period": "19",
     "genre": "drama",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1894"
   },
   {
     "title": "Lolita",
     "author": "Nabokov, V. V.",
     "period": "20",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1955"
   },
   {
     "title": "Balady a romance",
     "author": "Neruda, J.",
     "period": "19",
     "genre": "poezie",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1883"
   },
   {
     "title": "Povídky malostranské",
     "author": "Neruda, J.",
     "period": "19",
     "genre": "próza",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1878"
   },
   {
     "title": "Manon Lescaut",
     "author": "Nezval, V.",
     "period": "20",
     "genre": "poezie",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1940"
   },
   {
     "title": "Nikola Šuhaj loupežník",
     "author": "Olbracht, I.",
     "period": "20",
     "genre": "próza",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1933"
   },
   {
     "title": "1984",
     "author": "Orwell, G.",
     "period": "20",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1949"
   },
   {
     "title": "Farma zvířat",
     "author": "Orwell, G.",
     "period": "20",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1945"
   },
   {
     "title": "Mladý muž a bílá velryba",
     "author": "Páral, V.",
     "period": "20",
     "genre": "próza",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1973"
   },
   {
     "title": "Smrt krásných srnců",
     "author": "Pavel, O.",
     "period": "20",
     "genre": "próza",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1971"
   },
   {
     "title": "Podkoní a žák",
     "author": "Anonym",
     "period": "18",
     "genre": "poezie",
-    "isCzech": true
+    "isCzech": true,
+    "year": "kolem 1400"
   },
   {
     "title": "Jáma a kyvadlo",
     "author": "Poe, E. A.",
     "period": "19",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1842"
   },
   {
     "title": "Bylo nás pět",
     "author": "Poláček, K.",
     "period": "20",
     "genre": "próza",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1946"
   },
   {
     "title": "Piková dáma",
     "author": "Puškin, A. S.",
     "period": "19",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1834"
   },
   {
     "title": "Kalibův zločin",
     "author": "Rais, K. V.",
     "period": "19",
     "genre": "próza",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1895"
   },
   {
     "title": "Na západní frontě klid",
     "author": "Remarque, E. M.",
     "period": "20",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1929"
   },
   {
     "title": "Petr a Lucie",
     "author": "Rolland, R.",
     "period": "20",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1920"
   },
   {
     "title": "Kdo chytá v žitě",
     "author": "Salinger, J. D.",
     "period": "20",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1951"
   },
   {
     "title": "Zaklínač I.: Poslední přání",
     "author": "Sapkowski, A.",
     "period": "20",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1993"
   },
   {
     "title": "Na vlnách TSF",
     "author": "Seifert, J.",
     "period": "20",
     "genre": "poezie",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1925"
   },
   {
     "title": "Hamlet",
     "author": "Shakespeare, W.",
     "period": "18",
     "genre": "drama",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1601"
   },
   {
     "title": "Romeo a Julie",
     "author": "Shakespeare, W.",
     "period": "18",
     "genre": "drama",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1595"
   },
   {
     "title": "Othello",
     "author": "Shakespeare, W.",
     "period": "18",
     "genre": "drama",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1603"
   },
   {
     "title": "Zkrocení zlé ženy",
     "author": "Shakespeare, W.",
     "period": "18",
     "genre": "drama",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1593"
   },
   {
     "title": "Pygmalion",
     "author": "Shaw, G. B.",
     "period": "20",
     "genre": "drama",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1913"
   },
   {
     "title": "Vyšetřování ztráty třídní knihy",
     "author": "Smoljak, L., Svěrák, Z.",
     "period": "20",
     "genre": "drama",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1967"
   },
   {
     "title": "Antigona",
     "author": "Sofokles",
     "period": "18",
     "genre": "drama",
-    "isCzech": false
+    "isCzech": false,
+    "year": "kolem 442 př.n.l."
   },
   {
     "title": "Jeden den Ivana Děnisoviče",
     "author": "Solženicyn, A.",
     "period": "20",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1962"
   },
   {
     "title": "O myších a lidech",
     "author": "Steinbeck, J.",
     "period": "20",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1937"
   },
   {
     "title": "Sophiina volba",
     "author": "Styron, W.",
     "period": "20",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1979"
   },
   {
     "title": "Občanský průkaz",
     "author": "Šabach, P.",
     "period": "20",
     "genre": "próza",
-    "isCzech": true
+    "isCzech": true,
+    "year": "2006"
   },
   {
     "title": "Zbabělci",
     "author": "Škvorecký, J.",
     "period": "20",
     "genre": "próza",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1958"
   },
   {
     "title": "Stříbrný vítr",
     "author": "Šrámek, F.",
     "period": "20",
     "genre": "próza",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1910"
   },
   {
     "title": "Společenstvo prstenu",
     "author": "Tolkien, J. R. R.",
     "period": "20",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1954"
   },
   {
     "title": "Strakonický dudák",
     "author": "Tyl, J. K.",
     "period": "19",
     "genre": "drama",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1847"
   },
   {
     "title": "Rozmarné léto",
     "author": "Vančura, V.",
     "period": "20",
     "genre": "próza",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1926"
   },
   {
     "title": "Báječná léta pod psa",
     "author": "Viewegh, M.",
     "period": "20",
     "genre": "próza",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1992"
   },
   {
     "title": "Malý testament",
     "author": "Villon, F.",
     "period": "18",
     "genre": "poezie",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1456"
   },
   {
     "title": "Balada z hadrů",
     "author": "Voskovec, J., Werich, J.",
     "period": "20",
     "genre": "drama",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1935"
   },
   {
     "title": "Noc na Karlštejně",
     "author": "Vrchlický, J.",
     "period": "19",
     "genre": "drama",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1884"
   },
   {
     "title": "Den trifidů",
     "author": "Wyndham, J.",
     "period": "20",
     "genre": "próza",
-    "isCzech": false
+    "isCzech": false,
+    "year": "1951"
   },
   {
     "title": "Okurková sezóna",
     "author": "Žáček, J.",
     "period": "20",
     "genre": "poezie",
-    "isCzech": true
+    "isCzech": true,
+    "year": "1981"
   }
 ]
