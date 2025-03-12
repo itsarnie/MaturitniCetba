@@ -22,40 +22,39 @@ fetch('data.json')
     console.error('Error loading JSON data:', error);
   });
 
-  function createBookElement(book, isSelected = false) {
-    const div = document.createElement('div');
-    div.className = 'book-item';
-  
-    // Hlavní obsah knihy
-    const mainContent = document.createElement('div');
-    mainContent.className = 'book-main-content';
-    mainContent.innerHTML = `
+function createBookElement(book, isSelected = false) {
+  const div = document.createElement('div');
+  div.className = 'book-item';
+
+  // Hlavní obsah knihy
+  const mainContent = document.createElement('div');
+  mainContent.className = 'book-main-content';
+  mainContent.innerHTML = `
       <div>${book.title}</div>
       <div class="book-meta">
         ${book.author}
         <span class="genre-badge genre-${book.genre}">${book.genre}</span>
       </div>
     `;
-  
-    // Rok knihy
-    const yearContent = document.createElement('div');
-    yearContent.className = 'book-year';
-    yearContent.textContent = book.year || 'N/A'; // Zobrazí "N/A", pokud není rok k dispozici
-  
-    // Přidáme obsah do hlavního kontejneru
-    div.appendChild(mainContent);
-    div.appendChild(yearContent);
-  
-    // Nastavíme akci při kliknutí
-    if (isSelected) {
-      div.onclick = () => removeBook(book);
-    } else {
-      div.onclick = () => selectBook(book);
-    }
-  
-    return div;
+
+  // Rok knihy
+  const yearContent = document.createElement('div');
+  yearContent.className = 'book-year';
+  yearContent.textContent = book.year || 'N/A'; // Zobrazí "N/A", pokud není rok k dispozici
+
+  // Přidáme obsah do hlavního kontejneru
+  div.appendChild(mainContent);
+  div.appendChild(yearContent);
+
+  // Nastavíme akci při kliknutí
+  if (isSelected) {
+    div.onclick = () => removeBook(book);
+  } else {
+    div.onclick = () => selectBook(book);
   }
-  
+
+  return div;
+}
 
 function updateBookLists() {
   availableBooks.sort((a, b) => a.author.localeCompare(b.author));
@@ -161,7 +160,8 @@ function isSelectionValid() {
 }
 
 function generatePDF() {
-  const isDebugMode = typeof process !== 'undefined' && process.env.DEBUG_MODE === 'true';
+  const isDebugMode =
+    typeof process !== 'undefined' && process.env.DEBUG_MODE === 'true';
 
   if (!isDebugMode && !isSelectionValid()) {
     showNotification('Výběr knih nesplňuje všechny požadované podmínky!');
@@ -169,97 +169,129 @@ function generatePDF() {
   }
 
   // Získáme hodnoty jména a třídy z inputů
-  const userName = document.getElementById('userName').value || 'Nezadané_jméno';
-  const userClass = document.getElementById('userClass').value || 'Nezadaná_třída';
+  const userName =
+    document.getElementById('userName').value || 'Nezadané_jméno';
+  const userClass =
+    document.getElementById('userClass').value || 'Nezadaná_třída';
 
   // Vytvoříme název souboru
-  const fileName = `${userClass}_${userName}_maturitni_cetba.pdf`.replace(/\s+/g, '_');
+  const fileName = `${userClass}_${userName}_maturitni_cetba.pdf`.replace(
+    /\s+/g,
+    '_'
+  );
 
-  const docDefinition = {
-    pageSize: 'A4',
-    pageMargins: [40, 60, 40, 60],
-    content: [
-      {
-        text: 'Seznam maturitní četby',
-        style: 'header',
-        alignment: 'center',
-      },
-      {
-        columns: [
-          { text: `Jméno: ${userName}`, width: '50%', style: 'subheader' },
-          { text: `Třída: ${userClass}`, width: '50%', style: 'subheader', alignment: 'right' },
-        ],
-      },
-      {
-        ol: selectedBooks.map((book) => {
-          return {
+  // Load the base64 image from img.txt
+  fetch('img.txt')
+    .then((response) => response.text())
+    .then((base64Data) => {
+      const docDefinition = {
+        pageSize: 'A4',
+        pageMargins: [40, 60, 40, 60],
+        content: [
+          {
             columns: [
               {
-                text: `${book.title}`,
-                width: '40%',
-                bold: true,
+                image: 'data:image/jpeg;base64,' + base64Data,
+                width: 100,
+                alignment: 'left',
               },
-              { text: book.author, width: '30%', italics: true },
               {
-                text: book.genre,
-                width: '30%',
-                alignment: 'right',
-                color: getGenreColor(book.genre),
+                text: 'STŘEDNÍ PRŮMYSLOVÁ ŠKOLA  A VYŠŠÍ ODBORNÁ ŠKOLA\nJana Palacha 1840, 272 01 KLADNO',
+                alignment: 'center',
+                margin: [0, 20, 0, 0],
               },
             ],
-            margin: [0, 5, 0, 5],
-          };
-        }),
-      },
-      {
-        text: '\n\n\nPodpisy',
-        style: 'subheader',
-        alignment: 'center',
-      },
-      {
-        columns: [
-          {
-            width: '50%',
-            text: '_________________________\nPodpis učitele',
-            alignment: 'center',
-            margin: [0, 20, 0, 0],
           },
           {
-            width: '50%',
-            text: '_________________________\nPodpis žáka',
+            text: 'Seznam maturitní četby',
+            style: 'header',
             alignment: 'center',
-            margin: [0, 20, 0, 0],
+          },
+          {
+            columns: [
+              { text: `Jméno: ${userName}`, width: '50%', style: 'subheader' },
+              {
+                text: `Třída: ${userClass}`,
+                width: '50%',
+                style: 'subheader',
+                alignment: 'right',
+              },
+            ],
+          },
+          {
+            ol: selectedBooks.map((book) => {
+              return {
+                columns: [
+                  {
+                    text: `${book.title}`,
+                    width: '40%',
+                    bold: true,
+                  },
+                  { text: book.author, width: '30%', italics: true },
+                  {
+                    text: book.genre,
+                    width: '30%',
+                    alignment: 'right',
+                    color: getGenreColor(book.genre),
+                  },
+                ],
+                margin: [0, 5, 0, 5],
+              };
+            }),
+          },
+          {
+            text: '\n\n\nPodpisy',
+            style: 'subheader',
+            alignment: 'center',
+          },
+          {
+            columns: [
+              {
+                width: '50%',
+                text: '_________________________\nPodpis učitele',
+                alignment: 'center',
+                margin: [0, 20, 0, 0],
+              },
+              {
+                width: '50%',
+                text: '_________________________\nPodpis žáka',
+                alignment: 'center',
+                margin: [0, 20, 0, 0],
+              },
+            ],
           },
         ],
-      },
-    ],
-    styles: {
-      header: {
-        fontSize: 18,
-        bold: true,
-        margin: [0, 0, 0, 20],
-      },
-      subheader: {
-        fontSize: 12,
-        margin: [0, 20, 0, 10],
-      },
-    },
-    footer: function (currentPage, pageCount) {
-      return {
-        text: `SPŠ a VOŠ Kladno - ${new Date().toLocaleDateString(
-          'cs-CZ'
-        )} (Strana ${currentPage} z ${pageCount})`,
-        alignment: 'center',
-        fontSize: 10,
-        margin: [0, 0, 0, 20],
+        styles: {
+          header: {
+            fontSize: 18,
+            bold: true,
+            margin: [0, 0, 0, 20],
+          },
+          subheader: {
+            fontSize: 12,
+            margin: [0, 20, 0, 10],
+          },
+        },
+        footer: function (currentPage, pageCount) {
+          return {
+            text: `SPŠ a VOŠ Kladno - ${new Date().toLocaleDateString(
+              'cs-CZ'
+            )} (Strana ${currentPage} z ${pageCount})`,
+            alignment: 'center',
+            fontSize: 10,
+            margin: [0, 0, 0, 20],
+          };
+        },
       };
-    },
-  };
 
-  // Vygenerování a stažení PDF s upraveným názvem souboru
-  pdfMake.createPdf(docDefinition).download(fileName);
+      // Vygenerování a stažení PDF s upraveným názvem souboru
+      pdfMake.createPdf(docDefinition).download(fileName);
+    })
+    .catch((error) => {
+      console.error('Error loading image data:', error);
+      showNotification('Chyba při načítání obrázku!');
+    });
 }
-
 
 // Funkce pro zobrazení notifikace
 function showNotification(message) {
@@ -435,12 +467,16 @@ function validateSelection() {
 }
 
 document.getElementById('searchBox').addEventListener('input', (e) => {
-  const searchTerm = e.target.value.toLowerCase();
+  function removeDiacritics(inputStr) {
+    return inputStr.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+  const searchTerm = removeDiacritics(e.target.value.toLowerCase());
   let filteredBooks = books.filter(
     (book) =>
       !selectedBooks.includes(book) &&
-      (book.title.toLowerCase().includes(searchTerm) ||
-        book.author.toLowerCase().includes(searchTerm))
+      (removeDiacritics(book.title).toLowerCase().includes(searchTerm) ||
+        removeDiacritics(book.author).toLowerCase().includes(searchTerm) ||
+        removeDiacritics(book.genre).toLowerCase().includes(searchTerm))
   );
 
   filteredBooks = filteredBooks.filter((book) => !removedBooks.includes(book));
