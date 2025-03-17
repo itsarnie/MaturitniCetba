@@ -1,0 +1,14 @@
+{
+  "name": "maturitnicetba",
+  "version": "1.0.0",
+  "description": "Tento projekt poskytuje jednoduchou webovou aplikaci pro kontrolu výběru maturitní četby. Uživatelé mohou procházet seznam knih, vybrat až 20 knih dle požadavků k maturitě a vygenerovat si seznam ve formátu PDF. Aplikace zahrnuje funkcionalitu notifikací, které uživatele upozorní, pokud překročí limit pro výběr knih.",
+  "main": "js/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pdfmake": "^0.1.70"
+  }
+}

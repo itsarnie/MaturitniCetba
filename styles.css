@@ -182,6 +182,19 @@ footer span {
   color: #333;
 }
 
+footer a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  padding: 2px 5px;
+  border-radius: 4px;
+}
+
+footer a:hover {
+  color: #0056b3;
+  background-color: rgba(0, 123, 255, 0.1);
+}
+
 .export-button {
   margin-top: 20px;
   padding: 8px 16px;
@@ -196,8 +209,6 @@ footer span {
 .export-button:hover {
   background-color: #45a049;
 }
-
-
 
 .dark-mode-toggle {
   position: absolute; /* Pozice uvnitř kontejneru */
@@ -301,6 +312,15 @@ body.dark-mode {
 
 .dark-mode .export-button:hover {
   background-color: #388e3c;
+}
+
+.dark-mode footer a {
+  color: #66b3ff;
+}
+
+.dark-mode footer a:hover {
+  color: #99ccff;
+  background-color: rgba(102, 179, 255, 0.1);
 }
 
 /* Styl pro custom notifikaci */
