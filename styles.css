@@ -14,10 +14,6 @@ body {
   position: relative; /* Umístění pro vnořená absolutní tlačítka */
 }
 
-.container:hover {
-  transform: translateY(-5px);
-}
-
 h1,
 h2,
 h3 {
