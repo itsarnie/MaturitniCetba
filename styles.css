@@ -72,6 +72,7 @@ h3 {
   height: 300px;
   overflow-y: auto;
   border: 1px solid #ddd;
+  margin-bottom: 15px;
 }
 
 .selected-books {
@@ -158,6 +159,7 @@ h3 {
   font-size: 0.8em;
 }
 .search-box {
+  width: 100%;
   padding: 12px;
   margin-bottom: 15px;
   border: 1px solid #ddd;
@@ -404,4 +406,30 @@ body.dark-mode .user-info input {
 body.dark-mode .user-info input:focus {
   border-color: #66b3ff; /* Světle modrý obrys */
   box-shadow: 0 0 5px rgba(102, 179, 255, 0.5);
+}
+
+.filters {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.filter-select {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  background-color: white;
+  cursor: pointer;
+}
+
+.filter-select:hover {
+  border-color: #666;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
 }

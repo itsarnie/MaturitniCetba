@@ -3,6 +3,7 @@ let selectedBooks = [];
 let availableBooks = [];
 let removedBooks = [];
 let knownAutors = [];
+let filteredBooks = [];
 
 // Ukládá knihy do localStorage - uloží si je do paměti prohližeče
 const savedSelectedBooks = localStorage.getItem('selectedBooks');
@@ -16,6 +17,7 @@ fetch('data.json')
   .then((data) => {
     books = data;
     availableBooks = [...books];
+    filteredBooks = [...books];
     availableBooks.sort((a, b) => {
       const authorComparison = a.author.localeCompare(b.author);
       if (authorComparison !== 0) {
@@ -204,6 +206,8 @@ function generatePDF() {
     document.getElementById('userName').value || 'Nezadané jméno';
   const userClass =
     document.getElementById('userClass').value || 'Nezadaná třída';
+  const teacherName =
+    document.getElementById('teacherName').value || 'Nezadaný vyučující';
 
   
   const fileName = `${userClass}_${userName}_maturitni_cetba.pdf`.replace(
@@ -269,7 +273,7 @@ function generatePDF() {
           {
             columns: [
               {
-                text: `Datum vytvoření: ${new Date().toLocaleDateString('cs-CZ')}\nVyučující:\nPředeseda předmětové komise: Mgr. et. Mgr. Martin Jíša\nŘeditel školy: Ing. Miroslav Dundr`,
+                text: `Datum vytvoření: ${new Date().toLocaleDateString('cs-CZ')}\nVyučující: ${teacherName}\nPředeseda předmětové komise: Mgr. et. Mgr. Martin Jíša\nŘeditel školy: Ing. Miroslav Dundr`,
                 alignment: 'left',
                 lineHeight: 1.5,
                 fontSize: 10,
@@ -472,63 +476,46 @@ document.getElementById('searchBox').addEventListener('input', (e) => {
     return inputStr.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   }
   const searchTerm = removeDiacritics(e.target.value.toLowerCase());
-  let filteredBooks = books.filter((book) => {
-  // Pokud je kniha již vybraná, přeskočíme ji
-  if (selectedBooks.includes(book)) return false;
-  
-  // Rozdělíme celý hledaný řetězec (searchTerm) na jednotlivé tokeny podle mezer
-  const tokens = searchTerm.split(' ');
-  
-  // Inicializujeme proměnné pro případné specifické filtry
-  let isCzechFilter = null;
-  let periodFilter = null;
-  
-  // Pole pro obecné hledací tokeny (pro název, autora, žánr)
-  const generalTokens = [];
-  
-  // Projdeme každý token a pokud začíná klíčovým slovem, nastavíme filtr;
-  // jinak jej zařadíme do obecného hledání.
-  tokens.forEach(token => {
-    if (token.startsWith('isczech:')) {
-      // Např. "isczech:true" nebo "isczech:false"
-      const value = token.split(':')[1];
-      isCzechFilter = (value === 'true');
-    } else if (token.startsWith('period:')) {
-      // Např. "period:20"
-      periodFilter = token.split(':')[1];
-    } else {
-      generalTokens.push(token);
-    }
-  });
-  
-  // Pokud je nastaven filtr na isCzech, a kniha tuto podmínku nesplňuje, přeskočíme ji
-  if (isCzechFilter !== null && book.isCzech !== isCzechFilter) {
-    return false;
-  }
-  
-  // Pokud je nastaven filtr na period, a kniha tuto podmínku nesplňuje, přeskočíme ji
-  if (periodFilter !== null && book.period !== periodFilter) {
-    return false;
-  }
-  
-  // Pokud nejsou zadány žádné obecné tokeny, chceme vyfiltrovat jen na základě specifických filtrů
-  if (generalTokens.length === 0) {
-    return true;
-  }
-  
-  // Pokud jsou zadány obecné tokeny, ověříme, že se alespoň jeden z nich objeví v názvu, autorovi nebo žánru
-  return (
-    removeDiacritics(book.title).toLowerCase().includes(generalTokens.join(' ')) ||
-    removeDiacritics(book.author).toLowerCase().includes(generalTokens.join(' ')) ||
-    removeDiacritics(book.genre).toLowerCase().includes(generalTokens.join(' '))
+  let filteredBooks = books.filter(
+    (book) =>
+      !selectedBooks.includes(book) &&
+      (removeDiacritics(book.title).toLowerCase().includes(searchTerm) ||
+        removeDiacritics(book.author).toLowerCase().includes(searchTerm) ||
+        removeDiacritics(book.genre).toLowerCase().includes(searchTerm))
   );
-});
 
   filteredBooks = filteredBooks.filter((book) => !removedBooks.includes(book));
 
   availableBooks = filteredBooks;
   updateBookLists();
 });
+
+// Přidá event listenery pro filtry
+document.addEventListener('DOMContentLoaded', () => {
+  const periodFilter = document.getElementById('periodFilter');
+  const isCzechFilter = document.getElementById('isCzechFilter');
+
+  periodFilter.addEventListener('change', applyFilters);
+  isCzechFilter.addEventListener('change', applyFilters);
+});
+
+// Aplikuje filtry na seznam knih
+function applyFilters() {
+  const periodValue = document.getElementById('periodFilter').value;
+  const isCzechValue = document.getElementById('isCzechFilter').value;
+
+  filteredBooks = books.filter(book => {
+    const periodMatch = !periodValue || book.period === periodValue;
+    const isCzechMatch = !isCzechValue || book.isCzech.toString() === isCzechValue;
+    return periodMatch && isCzechMatch;
+  });
+
+  availableBooks = filteredBooks.filter(book => 
+    !selectedBooks.some(selected => selected.title === book.title)
+  );
+
+  updateBookLists();
+}
 
 // Aktualizuje seznamy knih
 updateBookLists();

@@ -15,6 +15,9 @@
       
         <label for="userClass">Třída:</label>
         <input type="text" id="userClass" placeholder="Zadejte svou třídu" />
+
+        <label for="teacherName">Vyučující:</label>
+        <input type="text" id="teacherName" placeholder="Zadejte jméno vyučujícího" />
       </div>
       <div class="rules">
         <h2>Pravidla výběru knih</h2>
@@ -28,13 +31,26 @@
         <div id="data">
         <div id="availableBooksSearch">
           <h3>Seznam dostupných knih</h3>
+          <div class="book-list" id="availableBooks"></div>
+          <div class="filters">
+            <select id="periodFilter" class="filter-select">
+              <option value="">Všechna období</option>
+              <option value="18">do 18. století</option>
+              <option value="19">19. století</option>
+              <option value="20">20. a 21. století</option>
+            </select>
+            <select id="isCzechFilter" class="filter-select">
+              <option value="">Všechny knihy</option>
+              <option value="true">Česká literatura</option>
+              <option value="false">Světová literatura</option>
+            </select>
+          </div>
           <input
             type="text"
             class="search-box"
             id="searchBox"
             placeholder="Vyhledat knihu..."
           />
-          <div class="book-list" id="availableBooks"></div>
         </div>
         <div id=" ">
           <h3>Vybrané knihy (<span id="selectedCount">0</span>/20)</h3>
